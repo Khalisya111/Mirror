@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Smart Mirror</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { color: #000; }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+    }
+    .language-toggle {
+      margin-left: auto;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1601979050980-cb8a8eb3f421') no-repeat center/cover;
+      height: 90vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: fadeIn 2s;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .hero h2 {
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .products img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 8px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .product-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+    }
+    .product-card button {
+      background: #000;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    footer {
+      background: #000;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      padding: 10px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI Smart Mirror</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#chat">AI Chatbot</a>
+    </nav>
+    <div class="language-toggle">
+      <button onclick="changeLang('en')">EN</button>
+      <button onclick="changeLang('ms')">BM</button>
+    </div>
+  </header>
+
+  <div class="hero" id="home">
+    <h2>Welcome to the Future of Personal Styling</h2>
+  </div>
+
+  <section class="section" id="description">
+    <h2>Why Choose AI Smart Mirror?</h2>
+    <p>This innovative mirror uses advanced AI to analyze your outfit and makeup, giving you instant feedback on whether your look matches your tone – warm or soft – and whether your outfit coordinates perfectly. Say goodbye to fashion doubts!</p>
+    <p>What makes us different? Our mirror doesn't just reflect your image — it guides you to your best self with real-time fashion insights. It’s your smart fashion assistant at home!</p>
+  </section>
+
+  <section class="section products" id="products">
+    <h2>Our Product Range</h2>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1601979041743-d52d3da2b9c6" alt="Mirror Small" />
+      <h3>Mini Style</h3>
+      <p>Perfect for compact spaces, includes AI outfit analysis.</p>
+      <p><strong>RM399.00</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1571867424482-4b25af4d0aa6" alt="Mirror Medium" />
+      <h3>Medium Elegance</h3>
+      <p>Ideal for bedrooms and dressing rooms.</p>
+      <p><strong>RM699.00</strong></p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1552152370-fb05b25ff17e" alt="Mirror Large" />
+      <h3>Full-Length Pro</h3>
+      <p>Full-body mirror with advanced style AI and voice control.</p>
+      <p><strong>RM999.00</strong></p>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+
+  <section class="section" id="chat">
+    <h2>Ask Our AI Mirror Assistant</h2>
+    <div class="chatbot">
+      <p><strong>AI Mirror Assistant:</strong></p>
+      <p>Hi! Ask me anything about the smart mirror. Need help choosing the right one?</p>
+      <input type="text" placeholder="Type your question..." style="width:100%; padding:5px;" />
+    </div>
+  </section>
+
+  <footer>
+    <p>Payment methods accepted: Cash, Credit Card, FPX, eWallets</p>
+    <p>&copy; 2025 AI Smart Mirror. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function changeLang(lang) {
+      if(lang === 'ms') {
+        document.querySelector('h2').innerText = 'Selamat Datang ke Masa Depan Penataan Gaya';
+        document.getElementById('description').innerHTML = `
+          <h2>Mengapa Pilih Cermin Pintar AI?</h2>
+          <p>Cermin inovatif ini menggunakan AI canggih untuk menganalisis pakaian dan solekan anda, memberi maklum balas sama ada penampilan anda sesuai dengan tona – panas atau lembut – serta sama ada pakaian anda serasi sepenuhnya.</p>
+          <p>Berbeza dari yang lain, cermin ini bukan sahaja memantulkan imej – ia membimbing anda dengan pandangan gaya masa nyata. Pembantu fesyen pintar anda di rumah!</p>
+        `;
+      } else {
+        window.location.reload();
+      }
+    }
+  </script>
+</body>
+</html>
